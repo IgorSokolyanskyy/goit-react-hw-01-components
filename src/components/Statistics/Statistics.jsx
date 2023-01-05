@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
-import getRandomHexColor from 'utils/getRandomHexColor';
+import getRandomBGC from 'utils/getRandomBGC';
 
 export default function Statistics({ title, stats }) {
   return (
@@ -11,7 +11,7 @@ export default function Statistics({ title, stats }) {
         {stats.map(stat => (
           <li
             className={css.item}
-            style={{ backgroundColor: getRandomHexColor() }}
+            style={{ backgroundColor: getRandomBGC() }}
             key={stat.id}
           >
             <span className={css.label}>{stat.label}</span>

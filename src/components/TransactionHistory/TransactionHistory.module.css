@@ -17,12 +17,12 @@ th {
 }
 
 td {
-  border: 1px solid grey;
+  border: 1px solid rgb(136, 135, 135);
   font-weight: 300;
   font-size: 13px;
   padding: 5px 0 5px 0;
 }
 
 tr:nth-child(even) {
-  background-color: rgb(161, 161, 161);
+  background-color: rgb(219, 217, 217);
 }
