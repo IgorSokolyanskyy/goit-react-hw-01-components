@@ -1,25 +1,27 @@
 import PropTypes from 'prop-types';
-import css from './Statistics.module.css';
-import getRandomBGC from 'utils/getRandomBGC';
+import { getRandomBgColor } from 'utils';
+import {
+  Section,
+  Title,
+  Items,
+  Item,
+  Label,
+  Percentage,
+} from './Statistics.styled';
 
 export default function Statistics({ title, stats }) {
   return (
-    <section className={css.statistics}>
-      <h2 className={css.title}>{title}</h2>
-
-      <ul className={css.statList}>
-        {stats.map(stat => (
-          <li
-            className={css.item}
-            style={{ backgroundColor: getRandomBGC() }}
-            key={stat.id}
-          >
-            <span className={css.label}>{stat.label}</span>
-            <span className={css.percentage}>{stat.percentage}%</span>
-          </li>
+    <Section>
+      <Title>{title}</Title>
+      <Items>
+        {stats.map(({ label, percentage, id }) => (
+          <Item style={{ backgroundColor: getRandomBgColor() }} key={id}>
+            <Label>{label}</Label>
+            <Percentage>{percentage}%</Percentage>
+          </Item>
         ))}
-      </ul>
-    </section>
+      </Items>
+    </Section>
   );
 }
 
