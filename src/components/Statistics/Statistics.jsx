@@ -12,7 +12,7 @@ import {
 export default function Statistics({ title, stats }) {
   return (
     <Section>
-      <Title>{title}</Title>
+      <Title>{title ? title : ''}</Title>
       <Items>
         {stats.map(({ label, percentage, id }) => (
           <Item style={{ backgroundColor: getRandomBgColor() }} key={id}>
