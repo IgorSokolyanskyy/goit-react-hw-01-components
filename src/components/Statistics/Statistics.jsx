@@ -12,7 +12,8 @@ import {
 export default function Statistics({ title, stats }) {
   return (
     <Section>
-      <Title>{title ? title : ''}</Title>
+      {title && <Title>{title}</Title>}
+
       <Items>
         {stats.map(({ label, percentage, id }) => (
           <Item style={{ backgroundColor: getRandomBgColor() }} key={id}>
