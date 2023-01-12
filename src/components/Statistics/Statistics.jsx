@@ -1,38 +1,22 @@
 import PropTypes from 'prop-types';
-import { getRandomBgColor } from 'utils';
-import {
-  Section,
-  Title,
-  Items,
-  Item,
-  Label,
-  Percentage,
-} from './Statistics.styled';
+import css from './Statistics.module.css';
 
-export default function Statistics({ title, stats }) {
-  return (
-    <Section>
-      {title && <Title>{title}</Title>}
-
-      <Items>
-        {stats.map(({ label, percentage, id }) => (
-          <Item style={{ backgroundColor: getRandomBgColor() }} key={id}>
-            <Label>{label}</Label>
-            <Percentage>{percentage}%</Percentage>
-          </Item>
-        ))}
-      </Items>
-    </Section>
-  );
-}
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
+  <ul className={css.items}>
+    <li className={css.item}>Good: {good}</li>
+    <li className={css.item}>Neutral: {neutral}</li>
+    <li className={css.item}>Bad: {bad}</li>
+    <li className={css.item}>Total: {total}</li>
+    <li className={css.item}>Positive feedback {positivePercentage}%</li>
+  </ul>
+);
 
 Statistics.propTypes = {
-  title: PropTypes.string.isRequired,
-  stats: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      percentage: PropTypes.number.isRequired,
-    })
-  ),
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
+
+export default Statistics;

@@ -1,0 +1,28 @@
+.items {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.item {
+  display: flex;
+  padding: 10px;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 4px;
+  width: 60px;
+  height: 25px;
+  border: none;
+  outline: none;
+  border-color: white;
+  text-transform: capitalize;
+}
+
+button:hover {
+  transform: scale(1.15);
+  background-color: rgb(99, 94, 251);
+}
